@@ -10,7 +10,11 @@ class _CupertinoCountryStatePicker extends StatefulWidget {
   final ValueChanged<String> onCountryChanged;
   final ValueChanged<String> onStateChanged;
   final Color? bottomSheetColor, borderColor, backgroundColor;
-  final double? bottomSheetBorderRadius, pickerItemExtent, pickerSize, horizontalSpace, borderRadius;
+  final double? bottomSheetBorderRadius,
+      pickerItemExtent,
+      pickerSize,
+      horizontalSpace,
+      borderRadius;
   final bool showBottomSheetDragHandle;
   final TextStyle? pickedValueTextStyle;
   final TextStyle? pickerTextStyle, labelTextStyle;
@@ -36,14 +40,17 @@ class _CupertinoCountryStatePicker extends StatefulWidget {
     this.padding,
     this.borderRadius,
     this.initialCountry,
-    this.initialState, this.pickerSelectedOverlay,
+    this.initialState,
+    this.pickerSelectedOverlay,
   });
 
   @override
-  State<_CupertinoCountryStatePicker> createState() => _CupertinoCountryStatePickerViewState();
+  State<_CupertinoCountryStatePicker> createState() =>
+      _CupertinoCountryStatePickerViewState();
 }
 
-class _CupertinoCountryStatePickerViewState extends State<_CupertinoCountryStatePicker> {
+class _CupertinoCountryStatePickerViewState
+    extends State<_CupertinoCountryStatePicker> {
   final _CountryStatePickerVM countryStatePickerVM = _CountryStatePickerVM();
 
   @override
@@ -65,7 +72,9 @@ class _CupertinoCountryStatePickerViewState extends State<_CupertinoCountryState
             },
             headlineText: "Country",
             pickedValue:
-                ((widget.initialCountry != null && widget.initialCountry!.isNotEmpty) && countryStatePickerVM.selectedCountry.isEmpty)
+                ((widget.initialCountry != null &&
+                            widget.initialCountry!.isNotEmpty) &&
+                        countryStatePickerVM.selectedCountry.isEmpty)
                     ? widget.initialCountry!
                     : countryStatePickerVM.selectedCountry.isNotEmpty
                     ? countryStatePickerVM.selectedCountry
@@ -85,7 +94,9 @@ class _CupertinoCountryStatePickerViewState extends State<_CupertinoCountryState
             },
             headlineText: "State/Province",
             pickedValue:
-                ((widget.initialState != null && widget.initialState!.isNotEmpty) && countryStatePickerVM.selectedCountry.isEmpty)
+                ((widget.initialState != null &&
+                            widget.initialState!.isNotEmpty) &&
+                        countryStatePickerVM.selectedCountry.isEmpty)
                     ? widget.initialState!
                     : countryStatePickerVM.selectedState.isNotEmpty
                     ? countryStatePickerVM.selectedState
@@ -96,22 +107,44 @@ class _CupertinoCountryStatePickerViewState extends State<_CupertinoCountryState
     );
   }
 
-  Widget _buildOutputField({required GestureTapCallback callback, required String headlineText, required String pickedValue}) {
+  Widget _buildOutputField({
+    required GestureTapCallback callback,
+    required String headlineText,
+    required String pickedValue,
+  }) {
     return GestureDetector(
       onTap: callback,
       child: Container(
         padding: widget.padding ?? const EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(widget.borderRadius ?? 1),
-          border: Border.all(color: widget.borderColor ?? const Color(0xFF86909B).withValues(alpha: 0.3), width: 1),
+          border: Border.all(
+            color:
+                widget.borderColor ??
+                const Color(0xFF86909B).withValues(alpha: 0.3),
+            width: 1,
+          ),
           color: widget.backgroundColor ?? Colors.white,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(headlineText, style: widget.labelTextStyle ?? Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 12, color: const Color(0xFF86909B))),
+            Text(
+              headlineText,
+              style:
+                  widget.labelTextStyle ??
+                  Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    fontSize: 12,
+                    color: const Color(0xFF86909B),
+                  ),
+            ),
             const SizedBox(height: 5),
-            Text(maxLines: 1, overflow: TextOverflow.ellipsis, pickedValue, style: widget.pickedValueTextStyle),
+            Text(
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              pickedValue,
+              style: widget.pickedValueTextStyle,
+            ),
           ],
         ),
       ),
@@ -121,7 +154,11 @@ class _CupertinoCountryStatePickerViewState extends State<_CupertinoCountryState
   showStatePicker() {
     showModalBottomSheet(
       useSafeArea: true,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(widget.bottomSheetBorderRadius ?? 0)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(
+          widget.bottomSheetBorderRadius ?? 0,
+        ),
+      ),
       backgroundColor: Colors.white,
       context: context,
       builder: (context) {
@@ -133,7 +170,10 @@ class _CupertinoCountryStatePickerViewState extends State<_CupertinoCountryState
                   height: 4,
                   width: 120,
                   margin: const EdgeInsets.only(top: 10, bottom: 10),
-                  decoration: BoxDecoration(color: const Color(0xFF86909B).withValues(alpha: 0.3), borderRadius: BorderRadius.circular(40)),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF86909B).withValues(alpha: 0.3),
+                    borderRadius: BorderRadius.circular(40),
+                  ),
                 ),
               ),
             (countryStatePickerVM.states.isNotEmpty)
@@ -146,19 +186,27 @@ class _CupertinoCountryStatePickerViewState extends State<_CupertinoCountryState
                         child: CupertinoPicker(
                           itemExtent: widget.pickerItemExtent!,
                           onSelectedItemChanged: (int index) {
-                            widget.onStateChanged(countryStatePickerVM._getSelectedState(index));
+                            widget.onStateChanged(
+                              countryStatePickerVM._getSelectedState(index),
+                            );
                             setState(() {});
                           },
-                          children: List<Widget>.generate(countryStatePickerVM.states.length, (int index) {
-                            return Center(
-                              child: Text(
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                countryStatePickerVM.states[index],
-                                style: widget.pickerTextStyle ?? Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 16),
-                              ),
-                            );
-                          }),
+                          children: List<Widget>.generate(
+                            countryStatePickerVM.states.length,
+                            (int index) {
+                              return Center(
+                                child: Text(
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  countryStatePickerVM.states[index],
+                                  style:
+                                      widget.pickerTextStyle ??
+                                      Theme.of(context).textTheme.bodySmall
+                                          ?.copyWith(fontSize: 16),
+                                ),
+                              );
+                            },
+                          ),
                         ),
                       ),
                     ],
@@ -166,7 +214,13 @@ class _CupertinoCountryStatePickerViewState extends State<_CupertinoCountryState
                 )
                 : Padding(
                   padding: const EdgeInsets.all(24),
-                  child: Center(child: Text(textAlign: TextAlign.center, "No states found for ${countryStatePickerVM.selectedCountry}", style: widget.pickerTextStyle)),
+                  child: Center(
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      "No states found for ${countryStatePickerVM.selectedCountry}",
+                      style: widget.pickerTextStyle,
+                    ),
+                  ),
                 ),
           ],
         );
@@ -177,7 +231,11 @@ class _CupertinoCountryStatePickerViewState extends State<_CupertinoCountryState
   showCountryPicker() {
     showModalBottomSheet(
       useSafeArea: true,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(widget.bottomSheetBorderRadius ?? 0)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(
+          widget.bottomSheetBorderRadius ?? 0,
+        ),
+      ),
       backgroundColor: widget.bottomSheetColor ?? Colors.white,
       context: context,
       builder: (context) {
@@ -189,7 +247,10 @@ class _CupertinoCountryStatePickerViewState extends State<_CupertinoCountryState
                   height: 4,
                   width: 120,
                   margin: const EdgeInsets.only(top: 10, bottom: 10),
-                  decoration: BoxDecoration(color: const Color(0xFF86909B).withValues(alpha: 0.3), borderRadius: BorderRadius.circular(40)),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF86909B).withValues(alpha: 0.3),
+                    borderRadius: BorderRadius.circular(40),
+                  ),
                 ),
               ),
             SizedBox(
@@ -201,20 +262,34 @@ class _CupertinoCountryStatePickerViewState extends State<_CupertinoCountryState
                     child: CupertinoPicker(
                       itemExtent: widget.pickerItemExtent!,
                       onSelectedItemChanged: (int index) {
-                        widget.onCountryChanged(countryStatePickerVM._getSelectedCountry(index, widget.onStateChanged));
-                        setState(() {});
-                      },
-                      selectionOverlay: widget.pickerSelectedOverlay ?? CupertinoPickerDefaultSelectionOverlay(),
-                      children: List<Widget>.generate(countryStatePickerVM.countries.length, (int index) {
-                        return Center(
-                          child: Text(
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            countryStatePickerVM.countries[index],
-                            style: widget.pickerTextStyle ?? Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 16),
+                        widget.onCountryChanged(
+                          countryStatePickerVM._getSelectedCountry(
+                            index,
+                            widget.onStateChanged,
                           ),
                         );
-                      }),
+                        setState(() {});
+                      },
+                      selectionOverlay:
+                          widget.pickerSelectedOverlay ??
+                          CupertinoPickerDefaultSelectionOverlay(),
+                      children: List<Widget>.generate(
+                        countryStatePickerVM.countries.length,
+                        (int index) {
+                          return Center(
+                            child: Text(
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              countryStatePickerVM.countries[index],
+                              style:
+                                  widget.pickerTextStyle ??
+                                  Theme.of(
+                                    context,
+                                  ).textTheme.bodySmall?.copyWith(fontSize: 16),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ],
@@ -231,7 +306,11 @@ class CupertinoCountryStatePicker extends StatelessWidget {
   final ValueChanged<String> onCountryChanged;
   final ValueChanged<String> onStateChanged;
   final Color? bottomSheetColor, borderColor, backgroundColor;
-  final double? bottomSheetBorderRadius, pickerItemExtent, pickerSize, horizontalSpace, borderRadius;
+  final double? bottomSheetBorderRadius,
+      pickerItemExtent,
+      pickerSize,
+      horizontalSpace,
+      borderRadius;
   final bool showBottomSheetDragHandle;
   final TextStyle? pickedValueTextStyle;
   final TextStyle? pickerTextStyle, labelTextStyle;
@@ -321,7 +400,9 @@ class CupertinoCountryStatePicker extends StatelessWidget {
     this.padding,
     this.borderRadius,
     this.initialCountry,
-    this.initialState, required this.pickerInstance, this.pickerSelectedOverlay,
+    this.initialState,
+    required this.pickerInstance,
+    this.pickerSelectedOverlay,
   });
 
   @override
@@ -343,7 +424,9 @@ class _CountryStatePickerVM {
   }
 
   Future<void> _getResponse() async {
-    var res = await rootBundle.loadString('packages/cupertino_country_state_picker/assets/country.json');
+    var res = await rootBundle.loadString(
+      'packages/cupertino_country_state_picker/assets/country.json',
+    );
     datasetResponse = jsonDecode(res);
   }
 
@@ -382,7 +465,8 @@ class _CountryStatePickerVM {
   String _getSelectedCountry(int index, ValueChanged<String> onStateChanged) {
     selectedState = "";
     onStateChanged(selectedState);
-    selectedCountry = countries[index].substring(4, countries[index].length).trim();
+    selectedCountry =
+        countries[index].substring(4, countries[index].length).trim();
     return selectedCountry;
   }
 

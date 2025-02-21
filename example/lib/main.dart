@@ -12,7 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -44,13 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 initialCountry: "Bangladesh",
                 backgroundColor: Colors.amber,
                 bottomSheetColor: Colors.amber,
-                pickedValueTextStyle: TextStyle(
-                  fontSize: 14,
-                ),
+                pickedValueTextStyle: TextStyle(fontSize: 14),
                 borderRadius: 16,
-                labelTextStyle: TextStyle(
-                  fontSize: 13,
-                ),
+                labelTextStyle: TextStyle(fontSize: 13),
               ),
             ),
           ],

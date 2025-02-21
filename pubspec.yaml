@@ -1,5 +1,5 @@
 name: cupertino_country_state_picker
-description: "A cupertino styled country and state picker"
+description: "A Flutter package providing a Cupertino-style country and state picker with smooth UI, flag support, and easy integration."
 version: 1.0.0
 homepage: https://github.com/Nafis71/cupertino_country_state_picker
 
