@@ -63,6 +63,29 @@ CupertinoCountryStatePicker(
 )
 ```
 
+## Parameters
+
+| Parameter | Type | Description                                           |
+|-----------|------|-------------------------------------------------------|
+| `onCountryChanged` | `ValueChanged<String>` | Callback when a country is selected.                  |
+| `onStateChanged` | `ValueChanged<String>` | Callback when a state is selected.                    |
+| `bottomSheetColor` | `Color?` | Background color of the bottom sheet.                 |
+| `borderColor` | `Color?` | Border color of the picker.                           |
+| `backgroundColor` | `Color?` | Background color of the textbox.                      |
+| `bottomSheetBorderRadius` | `double?` | Border radius of the bottom sheet.                    |
+| `pickerItemExtent` | `double?` | Height of each picker item.                           |
+| `pickerSize` | `double?` | Size of the picker.                                   |
+| `horizontalSpace` | `double?` | Horizontal spacing between country and state textbox. |
+| `borderRadius` | `double?` | Border radius of the textbox.                         |
+| `showBottomSheetDragHandle` | `bool` | Whether to show a drag handle on the bottom sheet.    |
+| `pickedValueTextStyle` | `TextStyle?` | Text style for the selected value.                    |
+| `pickerTextStyle` | `TextStyle?` | Text style for the picker items.                      |
+| `labelTextStyle` | `TextStyle?` | Text style for labels.                                |
+| `padding` | `EdgeInsets?` | Padding around the picker.                            |
+| `initialCountry` | `String?` | Initial selected country.                             |
+| `initialState` | `String?` | Initial selected state.                               |
+| `pickerSelectedOverlay` | `Widget?` | Custom overlay for the selected picker item.          |
+
 ## Screenshots
 ![Image](https://github.com/user-attachments/assets/1c79a5b7-776b-4e99-b9e4-16cbb0365979)
 ![Image](https://github.com/user-attachments/assets/02213585-4256-4969-ac7d-34ee4a82d288)
