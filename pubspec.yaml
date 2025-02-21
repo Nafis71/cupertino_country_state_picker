@@ -1,6 +1,6 @@
 name: cupertino_country_state_picker
-description: "A new Flutter project."
-version: 0.0.1
+description: "A cupertino styled country and state picker"
+version: 1.0.0
 homepage:
 
 environment:
