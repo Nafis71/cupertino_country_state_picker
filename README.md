@@ -48,15 +48,18 @@ CupertinoCountryStatePicker(
 
 ```dart
 CupertinoCountryStatePicker(
-  initialCountry: "United States",
-  showFlags: true,
-  backgroundColor: Colors.white,
-  onCountryChanged: (country) {
-    // Handle country selection
-  },
-  onStateChanged: (state) {
-    // Handle state selection
-  },
+  onCountryChanged: (value) {},
+  onStateChanged: (value) {},
+  initialCountry: "Bangladesh",
+  backgroundColor: Colors.amber,
+  bottomSheetColor: Colors.amber,
+  pickedValueTextStyle: TextStyle(
+  fontSize: 14,
+  ),
+  borderRadius: 16,
+  labelTextStyle: TextStyle(
+  fontSize: 13,
+  ),
 )
 ```
 

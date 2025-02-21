@@ -42,7 +42,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 onCountryChanged: (value) {},
                 onStateChanged: (value) {},
                 initialCountry: "Bangladesh",
-                showBottomSheetDragHandle: false,
+                backgroundColor: Colors.amber,
+                bottomSheetColor: Colors.amber,
+                pickedValueTextStyle: TextStyle(
+                  fontSize: 14,
+                ),
+                borderRadius: 16,
+                labelTextStyle: TextStyle(
+                  fontSize: 13,
+                ),
               ),
             ),
           ],
