@@ -1,7 +1,7 @@
 name: cupertino_country_state_picker
 description: "A cupertino styled country and state picker"
 version: 1.0.0
-homepage:
+homepage: https://github.com/Nafis71/cupertino_country_state_picker
 
 environment:
   sdk: ^3.7.0
