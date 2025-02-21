@@ -66,8 +66,6 @@ CupertinoCountryStatePicker(
 
 ## Roadmap
 - [ ] Add search functionality for countries and states.
-- [ ] Support for different themes.
-- [ ] Localization support for multiple languages.
 
 ## Contributing
 Contributions are welcome! Feel free to open an issue or submit a pull request to improve the package.
