@@ -43,7 +43,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 onStateChanged: (value) {},
                 initialCountry: "Bangladesh",
                 showBottomSheetDragHandle: false,
-                bottomSheetColor: Colors.red,
               ),
             ),
           ],
