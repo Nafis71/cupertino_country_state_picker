@@ -12,7 +12,6 @@ class _CupertinoCountryStatePicker extends StatefulWidget {
   final Color? bottomSheetColor, borderColor, backgroundColor;
   final double? bottomSheetBorderRadius, pickerItemExtent, pickerSize, horizontalSpace, borderRadius;
   final bool showBottomSheetDragHandle;
-  final String? pickedCountryValue;
   final TextStyle? pickedValueTextStyle;
   final TextStyle? pickerTextStyle, labelTextStyle;
   final EdgeInsets? padding;
@@ -32,7 +31,6 @@ class _CupertinoCountryStatePicker extends StatefulWidget {
     this.pickerSize,
     required this.onCountryChanged,
     required this.onStateChanged,
-    this.pickedCountryValue,
     this.horizontalSpace,
     this.labelTextStyle,
     this.padding,
@@ -235,7 +233,6 @@ class CupertinoCountryStatePicker extends StatelessWidget {
   final Color? bottomSheetColor, borderColor, backgroundColor;
   final double? bottomSheetBorderRadius, pickerItemExtent, pickerSize, horizontalSpace, borderRadius;
   final bool showBottomSheetDragHandle;
-  final String? pickedCountryValue;
   final TextStyle? pickedValueTextStyle;
   final TextStyle? pickerTextStyle, labelTextStyle;
   final EdgeInsets? padding;
@@ -257,8 +254,6 @@ class CupertinoCountryStatePicker extends StatelessWidget {
     TextStyle? pickerTextStyle,
     double pickerItemExtent = 40.0,
     double? pickerSize,
-    String? pickedCountryValue,
-    String? pickedStateValue,
     double? horizontalSpace,
     TextStyle? labelTextStyle,
     EdgeInsets? padding,
@@ -280,7 +275,6 @@ class CupertinoCountryStatePicker extends StatelessWidget {
         pickerTextStyle: pickerTextStyle,
         pickerItemExtent: pickerItemExtent,
         pickerSize: pickerSize,
-        pickedCountryValue: pickedCountryValue,
         horizontalSpace: horizontalSpace,
         labelTextStyle: labelTextStyle,
         padding: padding,
@@ -300,7 +294,6 @@ class CupertinoCountryStatePicker extends StatelessWidget {
       pickerTextStyle: pickerTextStyle,
       pickerItemExtent: pickerItemExtent,
       pickerSize: pickerSize,
-      pickedCountryValue: pickedCountryValue,
       pickerSelectedOverlay: pickerSelectedOverlay,
       horizontalSpace: horizontalSpace,
       labelTextStyle: labelTextStyle,
@@ -323,7 +316,6 @@ class CupertinoCountryStatePicker extends StatelessWidget {
     this.pickerTextStyle,
     this.pickerItemExtent = 40.0,
     this.pickerSize,
-    this.pickedCountryValue,
     this.horizontalSpace,
     this.labelTextStyle,
     this.padding,

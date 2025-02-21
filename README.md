@@ -1,39 +1,80 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# cupertino_country_state_picker
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Flutter package that provides a Cupertino-style country and state/province picker with a smooth and elegant UI. This package allows users to select a country and its corresponding states/provinces in a structured and user-friendly way.
 
 ## Features
+- 🌍 Select countries with a Cupertino-style bottom sheet picker.
+- 🏛️ Choose states/provinces based on the selected country.
+- 🎨 Customizable UI with support for flags and localized names.
+- 🔄 Easily integrate into existing projects with minimal setup.
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## Installation
 
-## Getting started
+Add the following dependency to your `pubspec.yaml`:
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```yaml
+dependencies:
+  cupertino_country_state_picker: latest_version
+```
+
+Then, run:
+
+```sh
+flutter pub get
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Import the package:
 
 ```dart
-const like = 'sample';
+import 'package:cupertino_country_state_picker/cupertino_country_state_picker.dart';
 ```
 
-## Additional information
+### Basic Example
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+CupertinoCountryStatePicker(
+  onCountryChanged: (country) {
+    print('Selected Country: $country');
+  },
+  onStateChanged: (state) {
+    print('Selected State: $state');
+  },
+)
+```
+
+### Customizing the Picker
+
+```dart
+CupertinoCountryStatePicker(
+  initialCountry: "United States",
+  showFlags: true,
+  backgroundColor: Colors.white,
+  onCountryChanged: (country) {
+    // Handle country selection
+  },
+  onStateChanged: (state) {
+    // Handle state selection
+  },
+)
+```
+
+## Screenshots
+![Image](https://github.com/user-attachments/assets/1c79a5b7-776b-4e99-b9e4-16cbb0365979)
+
+## Roadmap
+- [ ] Add search functionality for countries and states.
+- [ ] Support for different themes.
+- [ ] Localization support for multiple languages.
+
+## Contributing
+Contributions are welcome! Feel free to open an issue or submit a pull request to improve the package.
+
+## License
+
+This package is licensed under the MIT License. See the `LICENSE` file for more details.
+
+## Support
+If you like this package, please ⭐ the repository and share it with the community!
+
