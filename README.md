@@ -62,7 +62,7 @@ CupertinoCountryStatePicker(
 
 ## Screenshots
 ![Image](https://github.com/user-attachments/assets/1c79a5b7-776b-4e99-b9e4-16cbb0365979)
-![Image](https://github.com/user-attachments/assets/5abd6cc3-8eb2-4463-8698-d7f88e3d6f9f)
+![Image](https://github.com/user-attachments/assets/02213585-4256-4969-ac7d-34ee4a82d288)
 
 ## Roadmap
 - [ ] Add search functionality for countries and states.
