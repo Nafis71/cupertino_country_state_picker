@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'dart:ui';
+
 /// This is used for limiting the search function call
 class PickerDeBouncer {
   /// Indicates delay between calls
   final Duration delay;
   Timer? _timer;
+
   ///
   PickerDeBouncer({required this.delay});
 

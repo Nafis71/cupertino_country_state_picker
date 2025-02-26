@@ -1,3 +1,7 @@
+## 1.1.1
+
+* Formated code for pub points
+
 ## 1.1.0
 
 * Added search functionality for both country and state
