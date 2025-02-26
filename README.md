@@ -96,7 +96,11 @@ CupertinoCountryStatePicker(
 
 ## Screenshots
 <img align="left" alt ="homePage" width ="250" src="https://github.com/user-attachments/assets/bceacf4e-6388-43d6-8091-90894c5f892b"></img>
-<img align="left" alt ="homePage" width ="250" src="https://github.com/user-attachments/assets/de0c4835-d27e-4d66-8331-1f74ce58975f"></img>
+<img align="center" alt ="homePage" width ="250" src="https://github.com/user-attachments/assets/de0c4835-d27e-4d66-8331-1f74ce58975f"></img>
+
+
+
+
 
 
 ## Roadmap
