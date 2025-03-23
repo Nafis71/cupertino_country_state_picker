@@ -1,3 +1,7 @@
+## 1.1.2
+
+* Added support for previous flutter versions
+
 ## 1.1.1
 
 * Formated code for pub points
